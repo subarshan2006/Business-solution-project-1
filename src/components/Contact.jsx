@@ -94,6 +94,11 @@ function Contact({ activePage }) {
         </div>
       </section>
 
+      {/* Advertisement Banner */}
+      <section className="ad-banner">
+        <img src="/assets/images/image.png" alt="Advertisement" className="ad-banner-img" />
+      </section>
+
       {/* Footer */}
       <footer className="site-footer">
         <p>© 2026 Kavitha JR — Online Math Tutor. All rights reserved.</p>

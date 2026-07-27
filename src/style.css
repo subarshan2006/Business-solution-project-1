@@ -2656,6 +2656,73 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 
+/**
+ * Ad Banner
+ */
+
+.ad-banner {
+  margin-bottom: 25px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.ad-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--ad-angle, 0deg),
+    transparent 0%,
+    transparent 70%,
+    var(--orange-yellow-crayola) 85%,
+    var(--orange-yellow-crayola) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+  animation: ad-border-spin 3s linear infinite;
+  pointer-events: none;
+}
+
+.ad-banner::after {
+  content: "Advertisement";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  color: var(--light-gray-70);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+@keyframes ad-border-spin {
+  0%   { --ad-angle: 0deg; }
+  100% { --ad-angle: 360deg; }
+}
+
+@property --ad-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.ad-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+
 
 /*-----------------------------------*\
   #SERVICES — SPECIFIC
