@@ -89,7 +89,7 @@ export const students = [
     docId: '2PACX-1vSHVviijtawe000VNntQLf43zmH2H-uJPwKk6zl5x0CXVIsDk3T5UA3AEBAh0Jx5TTIe7hiQH2B-2go'
   },
   {
-    name: 'Newstudent1',
+    name: 'Jerwin',
     slug: 'jerwin-796',
     docId: '2PACX-1vR6O8bUMeeOfpRwWtF5-GVyI34QjMieHxqqyRZ7gXCkU_tR87fcwUdEsJOu0-opeiMQ4xn12mEucdya'
   },
