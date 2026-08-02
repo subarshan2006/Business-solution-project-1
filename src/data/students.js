@@ -65,7 +65,7 @@ export const students = [
   },
   {
     name: 'Katherine',
-    slug: 'katherine-791',
+    slug: 'katheryn-791',
     docId: '2PACX-1vQ4NK6-BVasmWTnzL5OL337zNxMhdfGtn9o6PgugVbM11m3Haa5rWT1TWl-cOshW6NhG2c_mc46wMCC'
   },
   {
@@ -90,7 +90,7 @@ export const students = [
   },
   {
     name: 'Newstudent1',
-    slug: 'newstudent1-796',
+    slug: 'jerwin-796',
     docId: '2PACX-1vR6O8bUMeeOfpRwWtF5-GVyI34QjMieHxqqyRZ7gXCkU_tR87fcwUdEsJOu0-opeiMQ4xn12mEucdya'
   },
   {
