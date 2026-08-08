@@ -87,8 +87,8 @@ Our "database" is `portfolio-react/src/data/students.js` — a simple array of o
 // 🗄️ "The database" — src/data/students.js
 export const students = [
   {
-    name: 'Pavithramenon',
-    slug: 'pavithramenon-780',                 // appears in the URL: /notes/pavithramenon-780
+    name: 'TestStudent',
+    slug: 'teststtudent-111',                 // appears in the URL: /notes/teststtudent-111
     docId: '2PACX-1vSWMows4JOiRjuwHcjT...',    // the Google Doc embed ID (the "file")
   },
   // ... add as many students as you like
