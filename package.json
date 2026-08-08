@@ -6,11 +6,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "bash scripts/decrypt-data.sh",
     "build": "vite build",
+    "prebuild": "bash scripts/decrypt-data.sh",
     "lint": "oxlint",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "decrypt-data": "bash scripts/decrypt-data.sh",
+    "encrypt-data": "bash scripts/encrypt-data.sh"
   },
   "dependencies": {
     "react": "^19.2.7",

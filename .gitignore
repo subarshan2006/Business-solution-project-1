@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Student data (privacy) — only the encrypted .age file is committed
+src/data/students.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
