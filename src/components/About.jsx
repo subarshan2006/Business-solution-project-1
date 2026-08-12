@@ -5,7 +5,7 @@ const experience = [
     text: 'Now offering fully independent, one-on-one online tutoring, continuing to serve both US and Canadian curriculum students.',
   },
   {
-    title: 'Growing Stars — Online Math Tutor',
+    title: 'US Based — Online Math Tutor',
     years: '2022 – March 2026',
     text: 'Taught the US curriculum from 2022 onward — Elementary through Pre-Calculus, Algebra I & II, Geometry I & II, Trigonometry, and AP-level topics — with Canadian curriculum added from 2024.',
   },
