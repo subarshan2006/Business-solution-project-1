@@ -40,12 +40,12 @@ function App() {
   return (
     <BrowserRouter basename="/">
       <Routes>
-        <Route path="/notes/:slug" element={
+        <Route path="/studentrecords/:slug" element={
           <Layout activePage="notes" setActivePage={() => {}}>
             <NotesPage />
           </Layout>
         } />
-        <Route path="/notes" element={
+        <Route path="/studentrecords" element={
           <Layout activePage="notes" setActivePage={() => {}}>
             <NotesPage />
           </Layout>

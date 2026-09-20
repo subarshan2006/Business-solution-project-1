@@ -54,11 +54,11 @@ function Navbar({ activePage, setActivePage }) {
           ))}
           <li className="navbar-item">
             <Link
-              to="/notes"
+              to="/studentrecords"
               className={`navbar-link${activePage === 'notes' ? ' active' : ''}`}
               data-nav-link
             >
-              Notes
+              Student Record
             </Link>
           </li>
         </ul>
@@ -94,11 +94,11 @@ function Navbar({ activePage, setActivePage }) {
           ))}
           <li>
             <Link
-              to="/notes"
+              to="/studentrecords"
               className={`mobile-menu-link${activePage === 'notes' ? ' active' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
-              Notes
+              Student Record
             </Link>
           </li>
         </ul>
