@@ -3225,6 +3225,27 @@ textarea.form-input::-webkit-resizer { display: none; }
   box-shadow: 0 4px 18px hsla(38, 80%, 50%, 0.3);
 }
 
+[data-theme='light'] .demo-cta-btn {
+  box-shadow: 0 4px 18px hsla(38, 80%, 50%, 0.32);
+}
+
+[data-theme='light'] .demo-open-btn {
+  box-shadow: 0 4px 18px hsla(38, 80%, 50%, 0.32);
+}
+
+[data-theme='light'] .demo-popover-card {
+  background: hsl(220, 16%, 96%);
+  border: 1px solid hsl(220, 16%, 88%);
+}
+
+[data-theme='light'] .demo-popover-card::before {
+  background: hsl(0, 0%, 99%);
+}
+
+[data-theme='light'] .demo-popover-text {
+  color: hsl(220, 10%, 45%);
+}
+
 [data-theme='light'] .hero-cta-btn.secondary {
   background: hsl(220, 16%, 92%);
   border: 1px solid hsl(220, 16%, 84%);
@@ -3492,6 +3513,181 @@ article,
   margin-bottom: 12px;
   padding-left: 4px;
   font-weight: var(--fw-500);
+}
+
+/* Notes page: demo CTA button */
+.notes-demo-section {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.demo-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 16px;
+  background: var(--text-gradient-yellow);
+  color: hsl(0, 0%, 7%);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  text-decoration: none;
+  box-shadow: 0 4px 20px hsla(45, 100%, 50%, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px hsla(45, 100%, 50%, 0.4);
+}
+
+.demo-cta-btn--popping,
+.demo-cta-btn:active {
+  animation: demoClickClick 0.35s ease;
+}
+
+.demo-cta-arrow {
+  display: inline-flex;
+  font-size: 18px;
+  animation: demoArrowNudge 1.2s ease-in-out infinite;
+}
+
+@keyframes demoArrowNudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+@keyframes demoClickClick {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.88) translateY(2px); }
+  55% { transform: scale(1.05) translateY(-2px); }
+  75% { transform: scale(0.96) translateY(1px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* Notes page: demo popover */
+.notes-demo-section {
+  position: relative;
+}
+
+.demo-popover {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  animation: demoPopIn 0.25s ease;
+}
+
+.demo-popover-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  padding: 26px;
+  border-radius: 18px;
+  background: var(--border-gradient-onyx);
+  box-shadow: var(--shadow-2);
+  text-align: left;
+  z-index: 1;
+}
+
+.demo-popover-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.demo-popover-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+  border-radius: 20px;
+  background: var(--orange-yellow-crayola);
+  color: hsl(0, 0%, 7%);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-700);
+  letter-spacing: 1px;
+}
+
+.demo-popover-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.demo-popover-row--alt {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--jet);
+}
+
+.demo-popover-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.demo-popover-title {
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 4px;
+  font-size: calc(var(--fs-4) + 2px);
+}
+
+.demo-popover-text {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+}
+
+.demo-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 14px;
+  background: var(--text-gradient-yellow);
+  color: hsl(0, 0%, 7%);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  text-decoration: none;
+  box-shadow: 0 4px 18px hsla(45, 100%, 50%, 0.25);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-open-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px hsla(45, 100%, 50%, 0.35);
+}
+
+.demo-open-btn ion-icon {
+  font-size: 16px;
+}
+
+.demo-close-btn {
+  display: block;
+  margin: 14px auto 0;
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-family: inherit;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.2s ease;
+}
+
+.demo-close-btn:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+@keyframes demoPopIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .students-list {

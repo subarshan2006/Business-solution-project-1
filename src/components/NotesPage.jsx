@@ -9,10 +9,12 @@ function NotesPage() {
   const navigate = useNavigate()
   const [inputValue, setInputValue] = useState('')
   const [error, setError] = useState('')
+  const [demoClicks, setDemoClicks] = useState(0)
+  const [showDemo, setShowDemo] = useState(false)
 
   useEffect(() => {
     if (slug) {
-      const student = getStudentBySlug(slug)
+const student = getStudentBySlug(slug)
       if (student) {
         document.title = `${student.name}'s Session Notes | ${BASE_TITLE}`
       } else {
@@ -38,6 +40,11 @@ function NotesPage() {
     } else {
       setError('Student not found. Please check and try again.')
     }
+  }
+
+  const handleDemoClick = () => {
+    setDemoClicks((prev) => prev + 1)
+    setShowDemo(true)
   }
 
   // If no slug provided, show input form
@@ -72,6 +79,66 @@ function NotesPage() {
             <ion-icon name="arrow-forward-outline"></ion-icon>
           </button>
         </form>
+
+        <div className="notes-demo-section">
+          <button
+            type="button"
+            className={`demo-cta-btn${demoClicks > 0 ? ' demo-cta-btn--popping' : ''}`}
+            key={demoClicks}
+            onClick={handleDemoClick}
+          >
+            <span>See demo homework/correction</span>
+            <span className="demo-cta-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </span>
+          </button>
+
+          {showDemo && (
+            <div className="demo-popover">
+              <div className="demo-popover-card">
+                <span className="demo-popover-tag">DEMO</span>
+                <div className="demo-popover-row">
+                  <div className="demo-popover-info">
+                    <h4 className="h4 demo-popover-title">Pre-Algebra</h4>
+                    <p className="demo-popover-text">Sample homework & correction pdf</p>
+                  </div>
+                  <a
+                    href="/demo-pre-algebra.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="demo-open-btn"
+                  >
+                    <span>Open PDF</span>
+                    <ion-icon name="open-outline"></ion-icon>
+                  </a>
+                </div>
+
+                <div className="demo-popover-row demo-popover-row--alt">
+                  <div className="demo-popover-info">
+                    <h4 className="h4 demo-popover-title">Algebra 1 Correction</h4>
+                    <p className="demo-popover-text">Demo correction sample</p>
+                  </div>
+                  <a
+                    href="/demo-algebra-1.jpeg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="demo-open-btn"
+                  >
+                    <span>Open</span>
+                    <ion-icon name="open-outline"></ion-icon>
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  className="demo-close-btn"
+                  onClick={() => setShowDemo(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </article>
     )
   }
