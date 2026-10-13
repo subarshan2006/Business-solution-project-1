@@ -94,10 +94,10 @@ function Contact({ activePage }) {
         </div>
       </section>
 
-      {/* Advertisement Banner */}
+      {/* Advertisement Banner
       <section className="ad-banner">
         <img src="/assets/images/image.png" alt="Advertisement" className="ad-banner-img" />
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="site-footer">
